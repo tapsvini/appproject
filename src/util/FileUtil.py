@@ -1,8 +1,8 @@
 from lxml import etree
 
-def validateXML():
+def validateXML(filename):
     parser = etree.XMLParser(dtd_validation=True)
-    tree = etree.parse("sample.xml", parser)
+    tree = etree.parse(filename, parser)
     if tree:
         print("Validated");
     else:
@@ -27,5 +27,8 @@ def writeIntoFile(filename,mode,text):
 
 
 
-validateXML();
-writeIntoFile("xample.xml","w",generateXml('10','15'));
+# validateXML();
+# print generateXml('10','15');
+# writeIntoFile("xample1.xml","w",generateXml('10','15'));
+
+validateXML("xample1.xml");

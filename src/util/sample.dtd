@@ -1,5 +1,3 @@
-<!ELEMENT note (to,from,heading,body)>
-<!ELEMENT to (#PCDATA)>
-<!ELEMENT from (#PCDATA)>
-<!ELEMENT heading (#PCDATA)>
-<!ELEMENT body (#PCDATA)>
+<!ELEMENT TestResult (radius,length)>
+<!ELEMENT radius (#PCDATA)>
+<!ELEMENT length (#PCDATA)>

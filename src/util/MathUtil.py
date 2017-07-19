@@ -7,7 +7,7 @@ def factorial(n):
     else:
         return n * factorial(n-1);
 
-def chudnovskyBig(no_of_iteration_for_accuracy): #http://en.wikipedia.org/wiki/Chudnovsky_algorithm
+def chudnovskyBig(no_of_iteration_for_accuracy,round_off): #http://en.wikipedia.org/wiki/Chudnovsky_algorithm
     pi = Decimal(0)
     k = 0
     while k < no_of_iteration_for_accuracy:
@@ -15,9 +15,10 @@ def chudnovskyBig(no_of_iteration_for_accuracy): #http://en.wikipedia.org/wiki/C
         k += 1
     pi = pi * Decimal(10005).sqrt()/4270934400
     pi = pi**(-1)
-    return pi;
+    return round(pi,round_off);
 
 # http://www.sanfoundry.com/python-program-find-sum-sine-series/
+# Calculating using tayler series
 def sin2(x,n,rounding_upto):
     sine = 0
     pi = chudnovskyBig(5)
@@ -27,6 +28,7 @@ def sin2(x,n,rounding_upto):
         sine = sine + ((y**(2*i+1))/factorial(2*i+1))*sign
     return round(sine,rounding_upto)
 
-print sin2(30,11,2)
+# print sin2(30,11,4)
+print chudnovskyBig(11,4)
 
 
