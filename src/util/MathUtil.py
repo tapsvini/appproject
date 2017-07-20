@@ -27,13 +27,22 @@ def chudnovskyBig(no_of_iteration_for_accuracy,round_of_true,round_off): #http:/
         return pi;
 
 # Calculating sin value using tayler series
-def sin2(x,n,rounding_upto):
+def findSin(x,n,rounding_upto):
     sine = 0;
-    pi = chudnovskyBig(5);
+    pi = chudnovskyBig(5,1,5);
     for i in range(n):
         sign = (-1)**i;
         y=x*(pi/180);
         sine = sine + ((y**(2.0*i+1))/factorial(2*i+1))*sign;
     return roundno(sine,rounding_upto)
 
+def findCosine(x,n,rounding_upto):
+    cosx = 1
+    sign = -1
+    pi=chudnovskyBig(5,1,5);
+    for i in range(2, n, 2):
+        y=x*(pi/180)
+        cosx = cosx + (sign*(y**i))/factorial(i)
+        sign = -sign
+    return roundno(cosx,rounding_upto)
 
