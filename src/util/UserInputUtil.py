@@ -1,3 +1,10 @@
+#Function to validate integer input type from user
+'''
+INPUT
+
+message=message to be shown when to ask for the input
+
+'''
 def intergerValidationOnInput(message):
     while True:
         try:
@@ -6,6 +13,15 @@ def intergerValidationOnInput(message):
         except ValueError:
             print("Oops!  That was no valid number.  Try again...")
 
+
+#Function to validate input type from user with only valid values
+'''
+INPUT
+
+message=message to be shown when to ask for the input
+valid_values=List of valid values which is acceptable or are valid inputs
+
+'''
 def textValidationOnInput(message,valid_values=[]):
     while True:
         try:

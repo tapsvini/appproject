@@ -1,6 +1,12 @@
 from lxml import etree
 
 #Function to validate generated Xml with dtd
+'''
+INPUT
+
+filename=filename(which should be xml) which is required to be validated
+
+'''
 def validateXML(filename):
     parser = etree.XMLParser(dtd_validation=True);
     tree = etree.parse(filename, parser);
@@ -10,6 +16,13 @@ def validateXML(filename):
         print("Not Validated");
 
 # Function to generate XML
+'''
+INPUT
+
+radius=Radis which is taken as input from user
+length=which is output after doing calculation
+
+'''
 def generateXml(radius,length):
     root = etree.Element('TestResult');
     child_radius = etree.Element('radius');
@@ -22,6 +35,13 @@ def generateXml(radius,length):
     return s
 
 # Method to write text into given file name
+'''
+INPUT
+
+filename=Filename where results should be saved
+mode=valid values w,a. whether to create new file or append the result in previous file.
+text= text which needs to be write into the filename
+'''
 def writeIntoFile(filename,mode,text):
     file = open(filename,mode);
     file.write(text);
