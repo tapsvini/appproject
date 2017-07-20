@@ -1,6 +1,4 @@
-#to use the functionality present in MathUtil
 from src.util import MathUtil
-#to use the functionality present in UserInputUitl file
 from src.util import UserInputUtil
 
 #ask radius of coaster from the user
